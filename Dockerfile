@@ -9,7 +9,7 @@ WORKDIR /app
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN pnpm run build
 
-FROM nginx:stable-alpine
+FROM nginx:1.29.5-alpine3.23
 # 安装htpasswd工具和dos2unix
 RUN apk add --no-cache apache2-utils dos2unix
 
